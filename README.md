@@ -20,7 +20,7 @@
 
 ## Penggunaan
 
- ### Melalui file
+ ### Membuka file langsung
 	1. Jika puzzle belum dibuat, buat file txt di folder test dan isi bilangan 1-16 dengan 16 merupakan kotak kosong secara acak dengan susunan seperti matriks dengan spasi tiap bilangan dan diakhiri newline pada baris terakhir
 	2. Buka file Main.py di folder src kemudian akan muncul sebuah GUI
 	3. Tekan tombol browse kemudian mundur dari folder src dan pilih folder test
