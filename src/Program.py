@@ -176,6 +176,7 @@ def solvePuzzle(Puzzle):
     listSolusiPuzzle=[]
     curNode=1 #simpul awal
     found=False
+    solved=False
     mapPuzzle={} #dictionary berisi matriks puzzle dari simpulnya
     depthOfPuzzle={} #dictionary berisi kedalaman dari simpul
     parentNode = {} #dictionary berisi simpul parent dari simpul anaknya
@@ -211,15 +212,20 @@ def solvePuzzle(Puzzle):
             parentNode[curNode]=node
             depthOfPuzzle[curNode]=depthOfPuzzle[node]+1
             cost=sumCost(puzzle,depthOfPuzzle[curNode])
-            if (sumOfWrongBlock(puzzle)==0): #jika semua block puzzle sesuai
+            if (sumOfWrongBlock(puzzle)==0 ): #jika semua block puzzle sesuai
                 found=True
+                solved=True
                 break
             listPuzzle.append([cost, curNode])
+            if (curNode==100000): #membuat limit sampai 100000 agar program tidak hang terus menerus saat dijalankan
+                found=True
+                break
     end_time=time.time()
     jumlahSimpul=curNode
     waktuEksekusi=end_time-start_time
-    listSolusiPuzzle.append(mapPuzzle[curNode])
-    while(parentNode[curNode]!=None):
-        curNode=parentNode[curNode]
+    if solved:
         listSolusiPuzzle.append(mapPuzzle[curNode])
-    listSolusiPuzzle.reverse() #susun puzzle sesuai dari awal puzzle
+        while(parentNode[curNode]!=None):
+            curNode=parentNode[curNode]
+            listSolusiPuzzle.append(mapPuzzle[curNode])
+        listSolusiPuzzle.reverse() #susun puzzle sesuai dari awal puzzle

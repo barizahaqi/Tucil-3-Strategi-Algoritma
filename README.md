@@ -10,7 +10,8 @@
    Program ini dibuat dengan algoritma branch and bound untuk menemukan menyelesaikan persoalan 15-puzzle
    pada input puzzle yang diberikan. 
    Fitur yang tersedia dalam Program ini adalah menyelesaikan  persoalan 15-puzzle menggunakan algoritma 
-   branch and bound dengan memperlihatkan urutan penyelesaiannya melalui GUI python
+   branch and bound dengan memperlihatkan urutan penyelesaiannya melalui GUI python. Program ini dilimit hanya
+   bisa melakukan sampai 100000 simpul yang terbentuk agak program tidak terus berjalan tanpa batas.
 
 ## Instalasi
 	1. Pastikan python, pip, PySimpleGUI, sudah terinstall (direkomendasikan menggunakan versi terbaru)

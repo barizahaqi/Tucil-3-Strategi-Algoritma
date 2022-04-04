@@ -16,7 +16,8 @@ menu_column = [ #GUI bagian kanan
     ],
     [sg.Text(key="-SUM-")],
     [sg.Text(key="-TIME-")],
-    [sg.Text(key="-JUMLAH-")] 
+    [sg.Text(key="-JUMLAH-")], 
+    [sg.Text(key="-LIMIT-")]
     
 ]
 
@@ -96,7 +97,10 @@ while True:
                 jumlah="Jumlah Simpul: "+str(p.jumlahSimpul)
                 window["-TIME-"].update(waktu)
                 window["-JUMLAH-"].update(jumlah)
-                solved=True
+                if (len(p.listSolusiPuzzle)==0):
+                    window["-LIMIT-"].update("Limit Sudah Tercapai")
+                else:
+                    solved=True
             else: #jika nilai kurang +x ganjil
                 text="Puzzle Tidak bisa diselesaikan"
                 window["-TIME-"].update(text)
